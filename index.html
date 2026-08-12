@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#123D8C">
+    <meta name="description" content="MASJID 360 - Islamic Mosque Management, Transparency & Ummat Empowerment Platform">
+    <title>MASJID 360 | Mosque Management Platform</title>
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="icon" href="assets/logo-mdd.png">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div id="loginScreen" class="login-screen">
+      <section class="login-panel" aria-label="Masuk MASJID 360">
+        <img src="assets/logo-mdd.png" alt="Markaz Dakwah Digital" class="login-logo">
+        <p class="eyebrow">Islamic Mosque Management</p>
+        <h1>MASJID 360&deg;</h1>
+        <p class="tagline">Transparan dalam Amanah. Produktif dalam Khidmat.</p>
+        <form id="loginForm" class="login-form">
+          <label>
+            Role akses
+            <select id="roleSelect">
+              <option value="developer">Developer</option>
+              <option value="super_admin">Super Admin</option>
+              <option value="takmir">Takmir Masjid</option>
+              <option value="jamaah">Jamaah Masjid</option>
+            </select>
+          </label>
+          <label>
+            Password
+            <input id="accessCode" type="password" autocomplete="current-password" placeholder="Masukkan password">
+          </label>
+          <button type="submit" class="primary-action">Masuk Dashboard</button>
+        </form>
+        <p class="login-note">Akses tersedia untuk Developer, Super Admin, Takmir Masjid, dan Jamaah Masjid.</p>
+        <p class="developer-credit">Developed by : Markaz Dakwah Digital</p>
+      </section>
+    </div>
+
+    <div id="appShell" class="app-shell hidden">
+      <aside class="sidebar">
+        <div class="brand">
+          <img src="assets/logo-mdd.png" alt="Logo Markaz Dakwah Digital">
+          <div>
+            <strong>MASJID 360&deg;</strong>
+            <span id="workspaceLabel">Google Workspace</span>
+          </div>
+        </div>
+        <nav id="sideNav" class="side-nav" aria-label="Navigasi utama"></nav>
+        <div class="sidebar-footer">
+          <span>Developed by : Markaz Dakwah Digital</span>
+        </div>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <button id="menuToggle" class="icon-button" aria-label="Buka menu">Menu</button>
+          <div>
+            <p id="dayLabel" class="muted">Rabu</p>
+            <h2 id="mosqueName">Masjid Al-Mu'minuun 51</h2>
+          </div>
+          <div class="topbar-actions">
+            <div class="clock">
+              <span id="dateLabel">12 Agustus 2026</span>
+              <strong id="timeLabel">13:02 WIB</strong>
+            </div>
+            <button id="installButton" class="ghost-action hidden">Install</button>
+            <button id="logoutButton" class="icon-button" aria-label="Keluar">Out</button>
+          </div>
+        </header>
+
+        <section id="viewRoot" class="view-root"></section>
+      </main>
+    </div>
+
+    <div id="toast" class="toast hidden" role="status"></div>
+
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

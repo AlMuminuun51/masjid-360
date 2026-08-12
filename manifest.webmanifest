@@ -1,0 +1,35 @@
+{
+  "name": "MASJID 360 - Islamic Mosque Management",
+  "short_name": "MASJID 360",
+  "description": "Islamic Mosque Management, Transparency & Ummat Empowerment Platform",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#123D8C",
+  "theme_color": "#123D8C",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "assets/logo-mdd.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/logo-mdd.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Dashboard",
+      "url": "./index.html#dashboard"
+    },
+    {
+      "name": "Transparansi Publik",
+      "url": "./index.html#public"
+    }
+  ]
+}
