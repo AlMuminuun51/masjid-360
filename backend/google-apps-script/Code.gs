@@ -1,3 +1,5 @@
+const SPREADSHEET_ID = "1byq3QRziKbSGZw-tkcwJ_HWSkGlDpOfki4SByYojdDg";
+
 const SHEETS = [
   "transactions",
   "programs",
@@ -35,14 +37,14 @@ function doPost(e) {
 }
 
 function setupMasjid360() {
-  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const ss = getSpreadsheet();
   SHEETS.forEach((name) => ensureSheet(ss, name));
   PropertiesService.getScriptProperties().setProperty("MASJID_360_READY", "true");
   return "MASJID 360 backend ready";
 }
 
 function readAll() {
-  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const ss = getSpreadsheet();
   return SHEETS.reduce((result, sheetName) => {
     const sheet = ensureSheet(ss, sheetName);
     result[sheetName] = readSheet(sheet);
@@ -51,7 +53,7 @@ function readAll() {
 }
 
 function writeAll(payload) {
-  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const ss = getSpreadsheet();
   Object.keys(payload).forEach((sheetName) => {
     if (!SHEETS.includes(sheetName) || !Array.isArray(payload[sheetName])) return;
     const sheet = ensureSheet(ss, sheetName);
@@ -61,9 +63,13 @@ function writeAll(payload) {
 
 function appendRecord(sheetName, record) {
   if (!SHEETS.includes(sheetName)) throw new Error("Sheet is not allowed");
-  const sheet = ensureSheet(SpreadsheetApp.getActiveSpreadsheet(), sheetName);
+  const sheet = ensureSheet(getSpreadsheet(), sheetName);
   const headers = getHeaders(sheet, record);
   sheet.appendRow(headers.map((header) => record[header] || ""));
+}
+
+function getSpreadsheet() {
+  return SpreadsheetApp.openById(SPREADSHEET_ID);
 }
 
 function ensureSheet(ss, name) {
