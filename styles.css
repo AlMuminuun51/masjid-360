@@ -729,88 +729,47 @@ th {
   transform: rotateX(8deg) rotateY(-14deg);
 }
 
-.dome {
-  position: absolute;
-  left: 92px;
-  top: 18px;
-  width: 146px;
-  height: 126px;
-  border-radius: 80px 80px 20px 20px;
-  background: linear-gradient(145deg, #fff2ad, var(--gold), var(--gold-3));
-  box-shadow: 0 13px 0 #6b4b00, 0 26px 36px rgba(0, 0, 0, 0.22);
-}
-
-.dome::before {
-  content: "";
-  position: absolute;
-  left: 62px;
-  top: -34px;
-  width: 20px;
-  height: 42px;
-  border-radius: 999px;
-  background: linear-gradient(180deg, var(--gold-2), var(--gold));
-}
-
-.minaret {
-  position: absolute;
-  top: 54px;
-  width: 42px;
-  height: 176px;
-  border-radius: 8px 8px 4px 4px;
-  background: linear-gradient(145deg, #ffffff, #d7e4ff 55%, #8eb2ff);
-  box-shadow: 0 9px 0 rgba(216, 169, 0, 0.72), 0 22px 28px rgba(0, 0, 0, 0.18);
-}
-
-.minaret.left {
-  left: 26px;
-}
-
-.minaret.right {
-  right: 26px;
-}
-
-.minaret::before {
-  content: "";
-  position: absolute;
-  inset: -28px 4px auto;
-  height: 34px;
-  border-radius: 20px 20px 4px 4px;
-  background: linear-gradient(145deg, var(--gold-2), var(--gold));
-}
-
-.mosque-body {
-  position: absolute;
-  left: 68px;
-  right: 68px;
-  bottom: 22px;
-  height: 104px;
+.logo-showcase {
   display: grid;
   place-items: center;
-  border-radius: 8px 8px 6px 6px;
-  background: linear-gradient(145deg, #ffffff, #e8efff);
-  box-shadow: 0 12px 0 rgba(216, 169, 0, 0.78), 0 28px 36px rgba(0, 0, 0, 0.2);
+  isolation: isolate;
 }
 
-.mosque-body span {
-  font-size: 3rem;
-  font-weight: 950;
-  color: var(--royal);
-  text-shadow: 0 2px 0 var(--gold);
+.logo-showcase img {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 340px);
+  max-height: 300px;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 24px rgba(0, 0, 0, 0.38)) drop-shadow(0 0 16px rgba(255, 205, 67, 0.28));
 }
 
-.gold-orbit {
+.logo-glow {
   position: absolute;
-  border: 2px solid rgba(255, 224, 130, 0.66);
   border-radius: 50%;
-  transform: rotateZ(-18deg);
+  pointer-events: none;
 }
 
-.gold-orbit.one {
-  inset: 20px 0 42px;
+.logo-glow.gold {
+  inset: 28px 8px 38px;
+  border: 2px solid rgba(255, 221, 102, 0.64);
+  transform: rotateZ(-12deg) rotateX(62deg);
 }
 
-.gold-orbit.two {
-  inset: 48px 42px 70px;
+.logo-glow.blue {
+  inset: 56px 44px 62px;
+  border: 2px solid rgba(123, 180, 255, 0.45);
+  transform: rotateZ(10deg) rotateX(66deg);
+}
+
+.logo-showcase::after {
+  content: "";
+  position: absolute;
+  inset: 14% 8% 2%;
+  z-index: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 211, 74, 0.26), rgba(18, 61, 140, 0.04) 62%, transparent 72%);
+  filter: blur(4px);
 }
 
 .smart-flow {

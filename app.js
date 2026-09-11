@@ -259,15 +259,10 @@ function renderDashboard() {
         <h2>Transparansi Amanah dalam Visual 3D Modern</h2>
         <p>Menghubungkan ibadah, dana, program, jamaah, pembangunan, dan laporan publik dalam satu ruang kendali yang lebih dinamis.</p>
       </div>
-      <div class="mosque-visual-3d" aria-hidden="true">
-        <div class="dome"></div>
-        <div class="minaret left"></div>
-        <div class="minaret right"></div>
-        <div class="mosque-body">
-          <span>360</span>
-        </div>
-        <div class="gold-orbit one"></div>
-        <div class="gold-orbit two"></div>
+      <div class="mosque-visual-3d logo-showcase" aria-hidden="true">
+        <img src="assets/logo-mdd.png" alt="">
+        <div class="logo-glow gold"></div>
+        <div class="logo-glow blue"></div>
       </div>
     </section>
     <section class="grid cols-4">
