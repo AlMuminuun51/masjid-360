@@ -1102,6 +1102,8 @@ function init() {
   });
 
   document.querySelector(".password-toggle").addEventListener("click", (event) => {
+    event.preventDefault();
+    event.stopPropagation();
     const button = event.currentTarget;
     const password = document.getElementById("accessCode");
     const visible = password.type === "password";
