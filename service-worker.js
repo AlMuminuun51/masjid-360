@@ -1,4 +1,4 @@
-const CACHE_NAME = "masjid-360-v5";
+const CACHE_NAME = "masjid-360-v6";
 const ASSETS = [
   "./",
   "./index.html",

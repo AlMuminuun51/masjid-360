@@ -1101,6 +1101,16 @@ function init() {
     renderView();
   });
 
+  document.querySelector(".password-toggle").addEventListener("click", (event) => {
+    const button = event.currentTarget;
+    const password = document.getElementById("accessCode");
+    const visible = password.type === "password";
+    password.type = visible ? "text" : "password";
+    button.setAttribute("aria-pressed", String(visible));
+    button.setAttribute("aria-label", visible ? "Sembunyikan password" : "Tampilkan password");
+    button.title = visible ? "Sembunyikan password" : "Tampilkan password";
+  });
+
   document.getElementById("menuToggle").addEventListener("click", () => document.querySelector(".sidebar").classList.toggle("open"));
   document.getElementById("logoutButton").addEventListener("click", () => {
     localStorage.removeItem("masjid360:user");
